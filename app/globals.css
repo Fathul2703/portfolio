@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================================
+   DESIGN TOKENS — ubah warna di sini (light & dark)
+   ========================================================= */
+:root {
+  --bg: #ededea;
+  --surface: #f7f7f5;
+  --surface-2: #e4e4e0;
+  --ink: #111214;
+  --muted: #62646a;
+  --line: #d3d3ce;
+  --contour: #d5d5cf;
+  --accent: #ff5a1f;
+  --accent-ink: #ffffff;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0e0f12;
+  --surface: #15171b;
+  --surface-2: #1c1e23;
+  --ink: #ededea;
+  --muted: #8b8e95;
+  --line: #26282e;
+  --contour: #22252b;
+  --accent: #ff6b33;
+  --accent-ink: #0e0f12;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-contour: var(--contour);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --animate-marquee: marquee 60s linear infinite;
+  --animate-caret: caret 1.1s steps(1) infinite;
+  --animate-rise: rise 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+  --animate-fade: fade 1.2s ease both;
+  --animate-ping-slow: ping-slow 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+@keyframes caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scrollline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 0.7; }
+  80%, 100% { transform: scale(2.6); opacity: 0; }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  /* Label mono gaya anotasi peta */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--ink);
+    opacity: 0.22;
+  }
+  .container-x {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-x { padding-inline: 2rem; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Foto profil: monokrom di perangkat dengan hover, berwarna saat di-hover */
+.portrait-img {
+  transition: filter 0.7s ease, transform 1.2s cubic-bezier(0.2, 0.7, 0.1, 1);
+}
+@media (hover: hover) {
+  .portrait-img { filter: grayscale(1) contrast(1.05); }
+  .portrait:hover .portrait-img { filter: none; transform: scale(1.03); }
+}

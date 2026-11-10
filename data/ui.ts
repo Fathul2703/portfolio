@@ -1,0 +1,98 @@
+/**
+ * Teks antarmuka (label menu, judul section, tombol) dalam dua bahasa.
+ */
+export const ui = {
+  nav: {
+    about: { id: "Tentang", en: "About" },
+    skills: { id: "Keahlian", en: "Skills" },
+    projects: { id: "Karya", en: "Work" },
+    journey: { id: "Perjalanan", en: "Journey" },
+    contact: { id: "Kontak", en: "Contact" },
+    hire: { id: "Hubungi", en: "Let's talk" },
+    menu: { id: "Menu", en: "Menu" },
+    close: { id: "Tutup", en: "Close" },
+    theme: { id: "Ganti tema", en: "Toggle theme" },
+    language: { id: "Ganti bahasa", en: "Switch language" },
+    skip: { id: "Lewati ke konten", en: "Skip to content" },
+  },
+  hero: {
+    viewWork: { id: "Lihat Karya", en: "View My Work" },
+    contact: { id: "Hubungi Saya", en: "Contact Me" },
+    scroll: { id: "Gulir", en: "Scroll" },
+  },
+  about: {
+    label: { id: "Tentang saya", en: "About me" },
+    currently: { id: "Saat ini", en: "Currently" },
+    trait: { id: "Karakter", en: "Trait" },
+    nextTrait: { id: "Karakter berikutnya", en: "Next trait" },
+    resume: { id: "Unduh CV", en: "Download resume" },
+    based: { id: "Berbasis di", en: "Based in" },
+  },
+  skills: {
+    label: { id: "Kapabilitas", en: "Capabilities" },
+    title: { id: "Yang Saya Kerjakan", en: "What I Do" },
+    lead: {
+      id: "Gabungan web development, data, dan pemetaan untuk membangun sistem yang benar-benar dipakai.",
+      en: "A mix of web development, data, and mapping — to build systems people actually use.",
+    },
+    stack: { id: "Tech stack", en: "Tech stack" },
+  },
+  projects: {
+    label: { id: "Karya terpilih", en: "Selected work" },
+    title: { id: "Project", en: "Projects" },
+    lead: {
+      id: "Sistem dan eksperimen yang pernah saya bangun.",
+      en: "Systems and experiments I've built.",
+    },
+    featured: { id: "Unggulan", en: "Featured" },
+    live: { id: "Live", en: "Live" },
+    caseStudy: { id: "Baca studi kasus", en: "Read case study" },
+    visit: { id: "Kunjungi situs", en: "Visit site" },
+    demo: { id: "Demo", en: "Demo" },
+    code: { id: "Kode", en: "Code" },
+    index: { id: "Index project", en: "Project index" },
+    example: { id: "Contoh", en: "Sample" },
+    soon: { id: "Segera", en: "Soon" },
+    details: { id: "Detail", en: "Details" },
+    back: { id: "Kembali ke karya", en: "Back to work" },
+    role: { id: "Peran", en: "Role" },
+    year: { id: "Tahun", en: "Year" },
+    stack: { id: "Stack", en: "Stack" },
+    problem: { id: "Masalah", en: "Problem" },
+    solution: { id: "Solusi", en: "Solution" },
+    features: { id: "Fitur utama", en: "Key features" },
+    overview: { id: "Ringkasan", en: "Overview" },
+    next: { id: "Project berikutnya", en: "Next project" },
+    sampleNote: {
+      id: "Ini project contoh. Ganti datanya di data/projects.ts.",
+      en: "This is a sample project. Replace it in data/projects.ts.",
+    },
+  },
+  journey: {
+    label: { id: "Perjalanan", en: "Journey" },
+    title: { id: "Pendidikan & Pengalaman", en: "Education & Experience" },
+    education: { id: "Pendidikan", en: "Education" },
+    experience: { id: "Pengalaman", en: "Experience" },
+    now: { id: "Sekarang", en: "Now" },
+  },
+  contact: {
+    label: { id: "Mari terhubung", en: "Get in touch" },
+    headline: { id: ["Mari bangun", "sesuatu yang", "berguna."], en: ["Let's build", "something", "useful."] },
+    lead: {
+      id: "Terbuka untuk magang, proyek freelance, atau sekadar diskusi soal data dan web.",
+      en: "Open to internships, freelance projects, or just a chat about data and the web.",
+    },
+    copy: { id: "Salin email", en: "Copy email" },
+    copied: { id: "Tersalin!", en: "Copied!" },
+    write: { id: "Kirim email", en: "Send an email" },
+  },
+  footer: {
+    rights: { id: "Dibuat dengan Next.js.", en: "Built with Next.js." },
+    top: { id: "Kembali ke atas", en: "Back to top" },
+  },
+  notFound: {
+    title: { id: "Halaman tidak ditemukan", en: "Page not found" },
+    body: { id: "Koordinat ini kosong di peta.", en: "These coordinates are empty on the map." },
+    home: { id: "Kembali ke beranda", en: "Back home" },
+  },
+} as const;
