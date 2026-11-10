@@ -34,7 +34,7 @@ export const profile: Profile = {
       "I enjoy turning real problems — like village data scattered across spreadsheets — into systems that are tidy, open, and easy for anyone to use.",
     ],
   },
-  location: "Yogyakarta, Indonesia",
+  location: "Indonesia",
   coordinates: { lat: -7.7956, lon: 110.3695 },
   availableForWork: true,
   email: "muhammadfathulkohir@gmail.com",
